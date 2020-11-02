@@ -73,6 +73,18 @@ public class Interval {
                 krajnjaPripada == interval.krajnjaPripada;
     }
 
+    @Override
+    public String toString() {
+        if(this.isNull()) return "()";
+        String ispis = new String();
+        if(this.pocetnaPripada) ispis ="[";
+        else ispis = "(";
+        ispis += "" + pocetnaTacka+ "," + krajnjaTacka;
+        if(this.krajnjaPripada) ispis += "]";
+        else ispis += ")";
+        return ispis;
+    }
+
     //metodu intersect koja vraća presjek dva intervala: metoda treba biti urađena kao klasična public metoda (prima jedan interval)
 // i kao statička metoda (prima dva intervala);
 //također treba preklopiti metode klase Object a to su toString i equals, na način koji ima smisla za te metode.
